@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace App\Application\User\Load;
 
-use App\Application\Command;
-use App\Application\CommandHandler;
 use App\Application\Query;
 use App\Application\QueryHandler;
 use App\Domain\User\User;
@@ -19,7 +17,7 @@ class LoadUserQueryHandler implements QueryHandler
     }
 
     /**
-     * @param LoadUserQuery $command
+     * @param  LoadUserQuery  $command
      */
     public function handle(Query $command): User
     {

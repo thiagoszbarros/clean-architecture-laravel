@@ -17,18 +17,18 @@ class LoadUserController
     ) {
     }
 
-    public function __invoke(int $userId): JsonResponse | Response
+    public function __invoke(int $userId): JsonResponse|Response
     {
-        try{
+        try {
             $query = new LoadUserQuery($userId);
             $user = $this->loadHandler->handle($query);
-        }catch(UserNotFound $e){
+        } catch (UserNotFound $e) {
             return new JsonResponse([
                 'error' => $e->getMessage(),
-                'details'=> 
-                $e->getDetails()
+                'details' => $e->getDetails(),
             ], Response::HTTP_NOT_FOUND);
         }
+
         return new JsonResponse(
             $user, Response::HTTP_OK);
     }

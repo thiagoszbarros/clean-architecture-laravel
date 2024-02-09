@@ -36,7 +36,7 @@ class LoginUserControllerTest extends TestCase
         $this->handler
             ->shouldReceive('handle')
             ->once()
-            ->with(Mockery::on(fn($arg) => $arg == new LoginUserCommand(
+            ->with(Mockery::on(fn ($arg) => $arg == new LoginUserCommand(
                 email: 'email',
                 password: 'password',
             )));
@@ -51,7 +51,7 @@ class LoginUserControllerTest extends TestCase
 
         $accessToken = $this->mock(NewAccessToken::class);
 
-        $accessToken->plainTextToken = "token";
+        $accessToken->plainTextToken = 'token';
 
         $this->request
             ->shouldReceive('user->createToken')
@@ -59,7 +59,6 @@ class LoginUserControllerTest extends TestCase
             ->andReturn($accessToken);
 
         $response = $this->controller->__invoke($this->request);
-
 
         $this->assertEquals('{"token":"token"}', $response->getContent());
         $this->assertEquals(Response::HTTP_CREATED, $response->getStatusCode());
@@ -70,7 +69,7 @@ class LoginUserControllerTest extends TestCase
         $this->handler
             ->shouldReceive('handle')
             ->once()
-            ->with(Mockery::on(fn($arg) => $arg == new LoginUserCommand(
+            ->with(Mockery::on(fn ($arg) => $arg == new LoginUserCommand(
                 email: 'email',
                 password: 'password',
             )))->andThrow(UnauthorizedException::class);

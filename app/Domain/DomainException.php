@@ -12,7 +12,7 @@ class DomainException extends Exception
     private array $details;
 
     /**
-     * @param array<string, string|int|float|bool|null> $details
+     * @param  array<string, string|int|float|bool|null>  $details
      */
     public function __construct(string $message, array $details)
     {

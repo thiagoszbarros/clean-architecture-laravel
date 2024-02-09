@@ -1,6 +1,7 @@
 <?php
+
 namespace App\Application;
 
-interface Query{
-    
+interface Query
+{
 }

@@ -17,8 +17,8 @@ class LoginUserCommandHandler implements CommandHandler
 
     public function handle(Command $command): void
     {
-        if (!Auth::attempt(...[$command->getProperties()])) {
-            throw new UnauthorizedException("Fail to login");
+        if (! Auth::attempt(...[$command->getProperties()])) {
+            throw new UnauthorizedException('Fail to login');
         }
     }
 }

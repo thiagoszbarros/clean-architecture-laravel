@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Tests\Unit\Application\User\Create;
 
-use App\Application\User\Create\CreateUserCommand;
-use App\Application\User\Create\CreateUserCommandHandler;
 use App\Application\User\Load\LoadUserQuery;
 use App\Application\User\Load\LoadUserQueryHandler;
 use App\Domain\User\User;

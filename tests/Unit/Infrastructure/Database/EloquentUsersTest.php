@@ -16,6 +16,7 @@ use Tests\TestCase as TestsTestCase;
 class EloquentUsersTest extends TestsTestCase
 {
     private MockInterface $model;
+
     private EloquentUsers $repository;
 
     protected function setUp(): void
@@ -56,7 +57,7 @@ class EloquentUsersTest extends TestsTestCase
                 'name' => '',
                 'email' => '',
                 'password' => '',
-                'createdAt' => new DateTimeImmutable('2023-09-09 00:15:00')
+                'createdAt' => new DateTimeImmutable('2023-09-09 00:15:00'),
             ]));
 
         $this->repository->get(1);

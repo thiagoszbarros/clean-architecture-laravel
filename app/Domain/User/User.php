@@ -45,7 +45,7 @@ class User
             name: $data['name'],
             email: $data['email'],
             password: null,
-            createdAt:null,
+            createdAt: null,
         );
     }
 }

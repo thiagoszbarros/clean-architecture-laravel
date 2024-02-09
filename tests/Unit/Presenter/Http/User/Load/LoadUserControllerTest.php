@@ -4,17 +4,11 @@ declare(strict_types=1);
 
 namespace Unit\Presenter\Http\Payment;
 
-use App\Application\User\Create\CreateUserCommand;
-use App\Application\User\Create\CreateUserCommandHandler;
-use App\Application\User\Load\LoadUserQuery;
 use App\Application\User\Load\LoadUserQueryHandler;
 use App\Domain\User\User;
 use App\Domain\User\UserNotFound;
-use App\Presenter\Http\User\Create\CreateUserController;
-use App\Presenter\Http\User\Create\CreateUserRequest;
 use App\Presenter\Http\User\Load\LoadUserController;
 use DateTimeImmutable;
-use Mockery;
 use Mockery\MockInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Tests\TestCase;
@@ -50,7 +44,7 @@ class LoadUserControllerTest extends TestCase
         $this->handler
             ->shouldReceive('handle')
             ->once()
-            ->andReturn( new User(
+            ->andReturn(new User(
                 id: 0,
                 name: '',
                 email: '',

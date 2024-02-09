@@ -34,7 +34,7 @@ class CreateUserControllerTest extends TestCase
         $this->handler
             ->shouldReceive('handle')
             ->once()
-            ->with(Mockery::on(fn($arg) => $arg == new CreateUserCommand(
+            ->with(Mockery::on(fn ($arg) => $arg == new CreateUserCommand(
                 name: 'name',
                 email: 'email',
                 password: 'password',

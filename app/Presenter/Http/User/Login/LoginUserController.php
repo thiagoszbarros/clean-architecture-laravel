@@ -16,7 +16,7 @@ class LoginUserController
     ) {
     }
 
-    public function __invoke(LoginUserRequest $request): JsonResponse | Response
+    public function __invoke(LoginUserRequest $request): JsonResponse|Response
     {
         try {
             $this->loginUserCommandHandler->handle($request->toCommand());
@@ -26,7 +26,7 @@ class LoginUserController
         $token = $request->user()->createToken('login')->plainTextToken;
 
         return new JsonResponse([
-            'token' => $token
+            'token' => $token,
         ], Response::HTTP_CREATED);
     }
 }
